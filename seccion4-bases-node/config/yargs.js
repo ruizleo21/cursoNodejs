@@ -1,13 +1,15 @@
 const opts = {
     base: {
-        demand: true,
-        alias: 'b'
+        demandOption: true,
+        alias: 'b',
+        type: 'number'
     },
     limite: {
         alias: 'l',
-        default: 10
+        default: 10,
+        type: 'number'
     }
-}
+};
 const argv = require('yargs')
     .command('listar', 'Imprime en consola la tabla de multiplicar', opts)
     .command('crear', 'Crea el archivo de la tabla de multiplicar', opts)
@@ -17,4 +19,4 @@ const argv = require('yargs')
 
 module.exports = {
     argv
-}
+};

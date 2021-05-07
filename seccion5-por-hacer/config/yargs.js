@@ -1,12 +1,12 @@
 const descripcion = {
     demand: true,
     alias: 'd'
-}
+};
 
 const completado = {
     alias: 'c',
     default: true
-}
+};
 
 
 const argv = require('yargs')
@@ -18,4 +18,4 @@ const argv = require('yargs')
 
 module.exports = {
     argv
-}
+};

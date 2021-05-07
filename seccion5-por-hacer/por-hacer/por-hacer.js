@@ -7,8 +7,8 @@ const guardarDB = () => {
     let data = JSON.stringify(listadoporhacer);
     fs.writeFile('db/data.json', data, (err) => {
         if (err) throw new Error('No se pudo grabar', err);
-    })
-}
+    });
+};
 
 const cargarDB = () => {
     try {
@@ -16,7 +16,7 @@ const cargarDB = () => {
     } catch (error) {
         listadoporhacer = [];
     }
-}
+};
 
 const crear = (descripcion) => {
     cargarDB();
@@ -28,12 +28,12 @@ const crear = (descripcion) => {
     listadoporhacer.push(porHacer);
     guardarDB();
     return listadoporhacer;
-}
+};
 
 const getListado = () => {
     cargarDB();
     return listadoporhacer;
-}
+};
 
 const actualizar = (descripcion, completado = true) => {
     cargarDB();
@@ -46,7 +46,7 @@ const actualizar = (descripcion, completado = true) => {
         return false;
     }
 
-}
+};
 
 const borrar = (descripcion) => {
     cargarDB();
@@ -58,11 +58,11 @@ const borrar = (descripcion) => {
     } else {
         return false;
     }
-}
+};
 
 module.exports = {
     crear,
     getListado,
     actualizar,
     borrar
-}
+};
